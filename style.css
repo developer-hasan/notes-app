@@ -1,0 +1,448 @@
+/* Font familys */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --white-color: #fff;
+  --main-bg-color: rgba(220, 220, 220, 0.4);
+  --pale-font-color-o-1: rgba(27, 27, 27, 0.1);
+  --pale-font-color-o-2: rgba(0, 0, 0, 0.2);
+  --pale-font-color-o-3: rgba(0, 0, 0, 0.3);
+  --pale-font-color-o-4: rgba(0, 0, 0, 0.4);
+  --pale-font-color-o-5: rgba(0, 0, 0, 0.5);
+  --pale-font-color-o-6: rgba(0, 0, 0, 0.6);
+
+  --pale-font-color-1: #dcdcdc;
+  --pale-font-color-2: #d3d3d3;
+  --pale-font-color-3: #c0c0c0;
+  --pale-font-color-4: #a9a9a9;
+  --pale-font-color-5: #696969;
+  --orangered-main: #ff4500;
+  --orangered-dark: #da3a00;
+  --orangered-light: #f56531;
+  --red-color: #ff0000;
+  --dark-red-color: #8b0000;
+  --main-roboto: "Roboto", sans-serif;
+  --exo-font: "Exo", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: var(--main-roboto);
+  /* overflow-y: hidden; */
+}
+
+button {
+  border: none;
+}
+
+button:active {
+  outline: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.app .header {
+  /* positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 600ms ease-in-out;
+
+  /* phsicial */
+  height: 30vh;
+}
+
+.app .header h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.app .header .total {
+  font-size: 1.3rem;
+  color: var(--pale-font-color-o-6);
+}
+
+.app .body {
+  height: 200vh;
+  padding-top: 1rem;
+}
+
+.app .body .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app .body .actions > div {
+}
+
+.app .body .actions .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--white-color);
+}
+
+.app .body .actions .search input[name="search"] {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  height: 48px;
+}
+
+.app .body .actions .search .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--pale-font-color-o-1);
+  z-index: 150;
+  pointer-events: none;
+
+  transform: scale(0);
+}
+
+.app .body .actions .search input[name="search"]:focus {
+  outline: none;
+}
+
+.app .body .actions .search input[name="search"]:focus + button {
+  font-size: 2.5rem;
+  color: var(--orangered-main);
+}
+
+.app .body .actions .search button {
+  border: none;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  height: 50px;
+  width: 50px;
+  background-color: var(--white-color);
+  transition: all 100ms linear;
+}
+
+.app .body .actions h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity 600ms ease-in-out;
+  padding-left: 3rem;
+}
+
+.app .body .notes {
+  margin-top: 2rem;
+}
+.app .body .notes .notes-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: 0 1rem;
+  grid-gap: 1rem;
+}
+
+.app .body .btn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem;
+}
+
+.app .body .btn-container button {
+  padding: 1rem 2rem;
+  background-color: var(--orangered-light);
+  color: var(--white-color);
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  border-radius: 0.7rem;
+  display: none;
+}
+
+.app .body .notes .notes-content .note .delete {
+  background-color: var(--white-color);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  color: var(--dark-red-color);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.app .body .notes .notes-content .note .delete:active {
+  background-color: var(--pale-font-color-o-2);
+}
+
+.app .body .notes .note {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 1.3rem;
+  border-radius: 2rem;
+  transition: transform 100ms ease-in-out;
+  position: relative;
+}
+
+.app .body .notes .note:active {
+}
+
+.app .body .notes .note h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app .body .notes .note .created-at {
+  font-size: 1.05rem;
+  color: var(--pale-font-color-o-5);
+  margin-top: 3px;
+}
+
+.app .body .notes .note .content {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.edit {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+}
+
+.edit button {
+  display: inline-block;
+  border: none;
+  background-color: var(--orangered-main);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+}
+
+.edit button:active {
+  background-color: var(--orangered-dark);
+}
+
+.add-edit-note {
+  height: 100vh;
+  background-color: var(--white-color);
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  transition: transform 300ms ease-in-out;
+  transform: scale(0);
+}
+
+.add-edit-note .title {
+  display: flex;
+  /* align-items: center; */
+  z-index: 102;
+  background-color: white;
+  flex-direction: row;
+  padding: 2px;
+  align-items: center;
+}
+.add-edit-note .title button {
+  border: none;
+  height: 50px;
+  width: 50px;
+  font-size: 2rem;
+  border-radius: 50%;
+  z-index: 103;
+  background-color: white;
+}
+.add-edit-note .title button:active {
+  background-color: var(--pale-font-color-o-2);
+}
+
+.add-edit-note .title input[type="text"] {
+  flex-grow: 2;
+  border: none;
+  width: 100%;
+  height: 70px;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+
+  font-size: 2.8rem;
+  color: var(--pale-font-color-5);
+  background-color: var(--white-color);
+  transition: height 200ms ease-out;
+  z-index: 103;
+  font-family: var(--exo-font);
+}
+
+.add-edit-note .title input[type="text"]:focus {
+  outline: none;
+  height: 150px;
+  background-color: #fff;
+}
+
+.add-edit-note .title input[type="text"]:focus + .note-body textarea {
+}
+
+.add-edit-note .title input[type="text"]::placeholder {
+  font-size: 2rem;
+  color: var(--pale-font-color-o-3);
+}
+
+.add-edit-note .title input[type="text"]:focus::placeholder {
+  font-size: 2.7rem;
+}
+
+.add-edit-note .note-body textarea {
+  border: none;
+  resize: none;
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  outline: none;
+  font-family: var(--exo-font);
+}
+
+.add-edit-note .note-body textarea::placeholder {
+  color: var(--pale-font-color-3);
+  font-size: 1.6rem;
+}
+
+.add-edit-note .note-body textarea:focus {
+  /* outline: none; */
+}
+
+.add-edit-note.active {
+  transform: scale(1);
+}
+
+.wave {
+  position: absolute;
+  background: var(--orangered-light);
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 500ms linear infinite;
+  z-index: 1;
+}
+
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+/* dynamic classes */
+
+.hidden {
+  visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-inherit {
+  overflow: inherit;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.opacitiy-1 {
+  opacity: 1;
+}
+
+.opacitiy-0 {
+  opacity: 0;
+}
+
+.scale-1 {
+  transform: scale(1);
+}
+
+.drop-down.active {
+  display: block !important;
+}
+
+.cred {
+  color: var(--dark-red-color);
+}
+
+#search.active {
+  transform: scaleX(1) !important;
+}
+
+textarea.bg-gray-o {
+  background-color: var(--pale-font-color-1);
+}
+
+.overlay.active {
+  transform: scale(1);
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .app {
+    flex: 3;
+  }
+
+  .space {
+    flex: 1;
+    background-color: #fff;
+  }
+
+  .search {
+    margin-right: 1rem;
+  }
+
+  .app .body .btn-container button {
+    display: block;
+  }
+
+  .edit button {
+    display: none;
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <div class="space"></div>
+    <div class="app">
+      <div class="header">
+        <h1>All notes</h1>
+        <div class="total"></div>
+      </div>
+      <div class="body">
+        <div class="actions">
+          <h3>All notes</h3>
+          <div class="search">
+            <input type="text" name="search" id="search" autocomplete="off" />
+            <button autocomplete="off">
+              <i id="ic" class="fa fa-search"></i>
+            </button>
+            <div class="overlay"></div>
+          </div>
+        </div>
+        <div class="notes">
+          <div class="notes-content"></div>
+        </div>
+        <div class="btn-container">
+          <button>add note</button>
+        </div>
+      </div>
+      <div class="add-edit-note">
+        <div class="title">
+          <button onclick="back()"><i class="fa fa-chevron-left"></i></button>
+          <input type="text" placeholder="Title" />
+        </div>
+        <div class="note-body">
+          <textarea
+            name="note-content"
+            id="note"
+            placeholder="note here"
+          ></textarea>
+        </div>
+      </div>
+      <div class="edit">
+        <button>
+          <i class="fa fa-edit"></i>
+        </button>
+      </div>
+    </div>
+    <div class="space"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="globals.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
