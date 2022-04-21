@@ -1,19 +1,25 @@
 const DataController = (function () {
   let data = {
     notes: [
-      // {
-      //   id: 1,
-      //   header: "how is it going",
-      //   body:
-      //     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, dignissimos.",
-      //   createdAt: "Apr 24, 2021",
-      // },
-      // {
-      //   id: 2,
-      //   header: "some note 2",
-      //   body: "note content 2",
-      //   createdAt: "Jan 17, 2021",
-      // },
+      {
+        id: 1,
+        header: "First Note Header",
+        body:
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, dignissimos.",
+        createdAt: "Apr 24, 2021",
+      },
+      {
+        id: 2,
+        header: "Second Note Header",
+        body: "note content 2",
+        createdAt: "Jan 17, 2021",
+      },
+      {
+        id:3,
+        header: "Search by Header",
+        body:"note content",
+        createdAt:"Jan 17, 2021"
+      }
     ],
     currentNote: {},
     sortedNotes: [],
@@ -103,6 +109,11 @@ const UIController = (function () {
     overlay: ".app .body .actions .search .overlay",
   };
   let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  /*
+  document.querySelector("#header");
+  document.getElementById("id");
+  */
 
   return {
     getSelectors: function () {

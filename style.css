@@ -92,8 +92,7 @@ button:active {
   align-items: center;
 }
 
-.app .body .actions > div {
-}
+.app .body .actions>div {}
 
 .app .body .actions .search {
   display: flex;
@@ -127,7 +126,7 @@ button:active {
   outline: none;
 }
 
-.app .body .actions .search input[name="search"]:focus + button {
+.app .body .actions .search input[name="search"]:focus+button {
   font-size: 2.5rem;
   color: var(--orangered-main);
 }
@@ -153,6 +152,7 @@ button:active {
 .app .body .notes {
   margin-top: 2rem;
 }
+
 .app .body .notes .notes-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -201,8 +201,7 @@ button:active {
   position: relative;
 }
 
-.app .body .notes .note:active {
-}
+.app .body .notes .note:active {}
 
 .app .body .notes .note h4 {
   font-size: 1.8rem;
@@ -268,6 +267,7 @@ button:active {
   padding: 2px;
   align-items: center;
 }
+
 .add-edit-note .title button {
   border: none;
   height: 50px;
@@ -277,6 +277,7 @@ button:active {
   z-index: 103;
   background-color: white;
 }
+
 .add-edit-note .title button:active {
   background-color: var(--pale-font-color-o-2);
 }
@@ -303,8 +304,7 @@ button:active {
   background-color: #fff;
 }
 
-.add-edit-note .title input[type="text"]:focus + .note-body textarea {
-}
+.add-edit-note .title input[type="text"]:focus+.note-body textarea {}
 
 .add-edit-note .title input[type="text"]::placeholder {
   font-size: 2rem;
@@ -355,6 +355,7 @@ button:active {
     width: 0px;
     height: 0px;
   }
+
   100% {
     width: 700px;
     height: 700px;
